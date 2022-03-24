@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tutorial</title>
+</head>
+<body>
+  <!-- HTML TUTORIAL -->
+
+  <!-- HTML Attributes -->
+  <!-- Tip: It is almost always best to use relative URLs. They will not break if you change domain. Example: src="/images/img_girl.jpg". -->
+  <!-- lang -->
+  <html lang="en-US">
+  <!-- title -->
+  <p title="I'm a tooltip">This is a paragraph.</p>
+
+  <!-- HTML Paragraphs -->
+  <!-- <pre> -->
+  <pre>
+    My Bonnie lies over the ocean.
+  
+    My Bonnie lies over the sea.
+  
+    My Bonnie lies over the ocean.
+  
+    Oh, bring back my Bonnie to me.
+  </pre>
+
+  <!-- HTML Formatting -->
+  <!-- 
+    <b> - Bold text
+    <strong> - Important text
+    <i> - Italic text
+    <em> - Emphasized text
+    <mark> - Marked text
+    <small> - Smaller text
+    <del> - Deleted text
+    <ins> - Inserted text
+    <sub> - Subscript text
+    <sup> - Superscript text 
+  -->
+
+  <!-- HTML Quotations -->
+  <!-- <quote> -->
+  <blockquote cite="http://www.worldwildlife.org/who/index.html">
+    For 50 years, WWF has been protecting the future of nature.
+    The world's leading conservation organization,
+    WWF works in 100 countries and is supported by
+    1.2 million members in the United States and
+    close to 5 million globally.
+  </blockquote>
+  <!-- <q> -->
+  <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+  <!-- <abbr> -->
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+  <!-- <address> -->
+  <address>
+    Written by John Doe.<br>
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA
+  </address>
+  <!-- <cite> -->
+  <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+  <!-- <bdo> -->
+  <bdo dir="rtl">This text will be written from right to left</bdo>
+
+  <!-- HTML Links - Links -->
+  <!-- target -->
+  <!-- 
+    _self - Default. Opens the document in the same window/tab as it was clicked
+    _blank - Opens the document in a new window or tab
+    _parent - Opens the document in the parent frame
+    _top - Opens the document in the full body of the window 
+  -->
+  <!-- mailto: -->
+  <a href="mailto:someone@example.com">Send email</a>
+
+  <!-- HTML Links - Link Bookmarks -->
+  <h2 id="C4">Chapter 4</h2>
+  <a href="#C4">Jump to Chapter 4</a>
+  <!-- <a href="html_demo.html#C4">Jump to Chapter 4</a> -->
+
+  <!-- HTML Images - Image Map -->
+  <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+  <map name="workmap">
+    <!-- 
+      rect - defines a rectangular region
+      circle - defines a circular region
+      poly - defines a polygonal region
+      default - defines the entire region
+    -->
+    <area shape="rect" coords="34, 44, 270, 350" href="computer.htm">
+    <area shape="circle" coords="337, 300, 44" href="coffee.htm">
+    <area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147" href="croissant.htm">
+    <area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()">
+  </map>
+
+  <script>
+    function myFunction() {
+      alert("You clicked the coffee cup!");
+    }
+  </script>
+
+  <!-- HTML Images - Background Images -->
+  <style>
+    body {
+      background-image: url('img_girl.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      /* background-size: cover; */
+    }
+  </style>
+
+  <!-- HTML Images - The Picture Element -->
+  <picture>
+    <source media="(min-width: 650px)" srcset="img_food.jpg">
+    <source media="(min-width: 465px)" srcset="img_car.jpg">
+    <img src="img_girl.jpg">
+  </picture>
+  <!-- Note: Always specify an <img> element as the last child element of the <picture> element. The <img> element is used by browsers that do not support the <picture> element, or if none of the <source> tags match. -->
+  <!-- Note: The browser will use the first <source> element with matching attribute values, and ignore any following <source> elements. -->
+
+  <!-- HTML Tables -->
+  <!-- Note: The <td> elements are the data containers of the table.
+  They can contain all sorts of HTML elements; text, images, lists, other tables, etc. -->
+  <!-- Remember to define borders for both the table and the table cells. -->
+  <!-- border-collapse -->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <!-- border-spacing -->
+  <style>
+    table {
+      border-spacing: 5px;
+    }
+  </style>
+  <!-- Note: If the table has collapsed borders, border-spacing has no effect. -->
+  <!-- colspan -->
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Telephone</th>
+    </tr>
+    <tr>
+      <td>Bill Gates</td>
+      <td>55577854</td>
+      <td>55577855</td>
+    </tr>
+  </table>
+  <!-- rowspan -->
+  <table style="width:100%">
+    <tr>
+      <th>Name:</th>
+      <td>Bill Gates</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Telephone:</th>
+      <td>55577854</td>
+    </tr>
+    <tr>
+      <td>55577855</td>
+    </tr>
+  </table>
+  <!-- <caption> -->
+  <table style="width:100%">
+    <caption>Monthly savings</caption>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$50</td>
+    </tr>
+  </table>
+  <!-- Note: The <caption> tag must be inserted immediately after the <table> tag. -->
+  <!-- HTML Table Tags -->
+  <!-- 
+    <colgroup> - Specifies a group of one or more columns in a table for formatting
+    <col> - Specifies column properties for each column within a <colgroup> element
+    <thead> - Groups the header content in a table
+    <tbody> - Groups the body content in a table
+    <tfoot> - Groups the footer content in a table
+  -->
+
+  <!-- HTML Lists - Lists -->
+  <!-- <dl> -->
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>
+  <!-- type (<ol>) -->
+  <!-- 
+    1
+    A
+    a
+    I
+    i
+  -->
+  <!-- start (<ol>) -->
+  <ol start="50">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+  <!-- HTML Block and Inline Elements -->
+  <!-- Note: An inline element cannot contain a block-level element! -->
+
+  <!-- HTML class Attribute -->
+  <!-- Note: The class name is case sensitive! -->
+
+  <!-- HTML id Attribute -->
+  <!-- Note: The id name is case sensitive! -->
+  <!-- Note: The id name must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.). -->
+
+  <!-- HTML Iframes -->
+  <iframe src="url" title="description"></iframe>
+  <!-- Target for a Link -->
+  <iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+  <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+
+  <!-- HTML JavaScript -->
+  <!-- <noscript> -->
+  <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+  <!-- HTML File Paths -->
+  <!-- 
+    <img src="picture.jpg"> - The "picture.jpg" file is located in the same folder as the current page
+    <img src="images/picture.jpg"> - The "picture.jpg" file is located in the images folder in the current folder
+    <img src="/images/picture.jpg"> -	The "picture.jpg" file is located in the images folder at the root of the current web
+    <img src="../picture.jpg"> - The "picture.jpg" file is located in the folder one level up from the current folder
+  -->
+  <!-- It is best practice to use relative file paths (if possible). -->
+
+  <!-- HTML - The Head Element -->
+  <!-- <meta> -->
+  <!-- Define the character set used -->
+  <meta charset="UTF-8">
+  <!-- Define keywords for search engines -->
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <!-- Define a description of your web page -->
+  <meta name="description" content="Free Web tutorials">
+  <!-- Define the author of a page -->
+  <meta name="author" content="John Doe">
+  <!-- Refresh document every 30 seconds -->
+  <meta http-equiv="refresh" content="30">
+  <!-- Setting the viewport to make your website look good on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <base> -->
+  <base href="https://www.w3schools.com/" target="_blank">
+
+  <!-- HTML Layout Elements and Techniques -->
+  <!-- <details> - Defines additional details that the user can open and close on demand -->
+  <!-- <summary> - Defines a heading for the <details> element -->
+
+  <!-- HTML Computer Code Elements -->
+  <!-- <kbd> -->
+  <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+  <!-- <samp> -->
+  <p>Message from my computer:</p>
+  <p><samp>File not found.<br>Press F1 to continue</samp></p>
+  <!-- <code> -->
+  <code>
+    x = 5;
+    y = 6;
+    z = x + y;
+  </code>
+  <!-- <var> -->
+  <p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and <var>h</var> is the vertical height.</p>
+
+  <!-- HTML Semantic Elements -->
+  <!-- <figure> -->
+  <figure>
+    <img src="pic_trulli.jpg" alt="Trulli">
+    <figcaption>Fig1. - Trulli, Puglia, Italy.</figcaption>
+  </figure>
+  <!-- <time> -	Defines a date/time -->
+
+  <!-- HTML Style Guide and Coding Conventions -->
+  <!-- 
+    Always Declare Document Type
+    Use Lowercase Element Names
+    Close All HTML Elements
+    Use Lowercase Attribute Names
+    Always Quote Attribute Values
+    Always Specify alt, width, and height for Images
+    Spaces and Equal Signs
+    Avoid Long Code Lines
+    Blank Lines and Indentation
+    Never Skip the <title> Element
+    Omitting <html> and <body>?
+    Omitting <head>?
+    Close Empty HTML Elements?
+    Add the lang Attribute
+    Meta Data
+    Setting The Viewport
+    HTML Comments
+    Using Style Sheets
+    Loading JavaScript in HTML
+    Accessing HTML Elements with JavaScript
+    Use Lower Case File Names
+    File Extensions
+    Differences Between .htm and .html?
+    Default Filenames
+  -->
+
+  <!-- HTML Entities -->
+  <!-- 
+    &entity_name;
+      OR
+    &#entity_number;
+  -->
+  <!-- Non-breaking Space -->
+  <!-- Combining Diacritical Marks -->
+
+  <!-- HTML FORMS -->
+
+  <!-- HTML Forms -->
+  <!-- The <label> element also help users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the <label> element, it toggles the radio button/checkbox. -->
+
+  <!-- HTML Form Attributes -->
+  <!-- Tip: If the action attribute is omitted, the action is set to the current page. -->
+  <!-- target -->
+  <!-- 
+    _blank - The response is displayed in a new window or tab
+    _self	- The response is displayed in the current window
+    _parent	- The response is displayed in the parent frame
+    _top - The response is displayed in the full body of the window
+    framename - The response is displayed in a named iframe
+  -->
+  <!-- Tip: Always use POST if the form data contains sensitive or personal information! -->
+  <!-- autocomplete -->
+  <!-- novalidate -->
+  <!-- 
+    accept-charset - Specifies the character encodings used for form submission
+    enctype	- Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
+    name - Specifies the name of the form
+    rel - Specifies the relationship between a linked resource and the current document
+  -->
+
+  <!-- HTML Form Elements -->
+  <!-- <select> -->
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <!-- selected  -->
+  <option value="fiat" selected>Fiat</option>
+  <!-- size -->
+  <select id="cars" name="cars" size="3"></select>
+  <!-- multiple  -->
+  <select id="cars" name="cars" size="4" multiple></select>
+  <!-- <button> -->
+  <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+  <!-- Note: Always specify the type attribute for the button element. Different browsers may use different default types for the button element. -->
+  <!-- <fieldset> -->
+  <form action="/action_page.php">
+    <fieldset>
+      <legend>Personalia:</legend>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+  <!-- <datalist> -->
+  <form action="/action_page.php">
+    <input list="browsers">
+    <datalist id="browsers">
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+  </form>
+  <!-- <output> -->
+  <form action="/action_page.php"
+    oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    0
+    <input type="range"  id="a" name="a" value="50">
+    100 +
+    <input type="number" id="b" name="b" value="50">
+    =
+    <output name="x" for="a b"></output>
+    <br><br>
+    <input type="submit">
+  </form>
+  <!-- <optgroup>	- Defines a group of related options in a drop-down list -->
+
+  <!-- HTML Input Types -->
+  <!-- <input type="reset"> -->
+  <form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+    <input type="reset">
+  </form>
+  <!-- <input type="button"> -->
+  <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+  <!-- <input type="color"> -->
+  <form>
+    <label for="favcolor">Select your favorite color:</label>
+    <input type="color" id="favcolor" name="favcolor">
+  </form>
+  <!-- <input type="date">; min & max -->
+  <form>
+    <label for="datemax">Enter a date before 1980-01-01:</label>
+    <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+    <label for="datemin">Enter a date after 2000-01-01:</label>
+    <input type="date" id="datemin" name="datemin" min="2000-01-02">
+  </form>
+  <!-- <input type="datetime-local"> -->
+  <form>
+    <label for="birthdaytime">Birthday (date and time):</label>
+    <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+  </form>
+  <!-- <input type="file"> -->
+  <form>
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile">
+  </form>
+  <!-- <input type="hidden"> -->
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="hidden" id="custId" name="custId" value="3487">
+    <input type="submit" value="Submit">
+  </form>
+  <!-- <input type="month"> -->
+  <form>
+    <label for="bdaymonth">Birthday (month and year):</label>
+    <input type="month" id="bdaymonth" name="bdaymonth">
+  </form>
+  <!-- <input type="number"> -->
+  <form>
+    <label for="quantity">Quantity (between 1 and 5):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="5">
+  </form>
+  <!-- Input Restrictions -->
+  <!-- 
+    checked	- Specifies that an input field should be pre-selected when the page loads (for type="checkbox" or type="radio")
+    disabled - Specifies that an input field should be disabled
+    max	- Specifies the maximum value for an input field
+    maxlength	- Specifies the maximum number of character for an input field
+    min	- Specifies the minimum value for an input field
+    pattern -	Specifies a regular expression to check the input value against
+    readonly - Specifies that an input field is read only (cannot be changed)
+    required - Specifies that an input field is required (must be filled out)
+    size - Specifies the width (in characters) of an input field
+    step - Specifies the legal number intervals for an input field
+    value	- Specifies the default value for an input field
+  -->
+  <!-- <input type="range">; min, max & step -->
+  <form>
+    <label for="vol">Volume (between 0 and 50):</label>
+    <input type="range" id="vol" name="vol" min="0" max="50">
+  </form>
+  <!-- <input type="search"> -->
+  <form>
+    <label for="gsearch">Search Google:</label>
+    <input type="search" id="gsearch" name="gsearch">
+  </form>
+  <!-- <input type="tel"> -->
+  <form>
+    <label for="phone">Enter your phone number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+  </form>
+  <!-- <input type="time"> -->
+  <form>
+    <label for="appt">Select a time:</label>
+    <input type="time" id="appt" name="appt">
+  </form>
+  <!-- <input type="url"> -->
+  <form>
+    <label for="homepage">Add your homepage:</label>
+    <input type="url" id="homepage" name="homepage">
+  </form>
+  <!-- <input type="week"> -->
+  <form>
+    <label for="week">Select a week:</label>
+    <input type="week" id="week" name="week">
+  </form>
+
+  <!-- HTML Input Attributes -->
+  <!-- readonly -->
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John" readonly><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe">
+  </form>
+  <!-- disabled -->
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John" disabled><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe">
+  </form>
+  <!-- size -->
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" size="50"><br>
+    <label for="pin">PIN:</label><br>
+    <input type="text" id="pin" name="pin" size="4">
+  </form>
+  <!-- maxlength -->
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" size="50"><br>
+    <label for="pin">PIN:</label><br>
+    <input type="text" id="pin" name="pin" maxlength="4" size="4">
+  </form>
+  <!-- min & max -->
+  <form>
+    <label for="datemax">Enter a date before 1980-01-01:</label>
+    <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+  
+    <label for="datemin">Enter a date after 2000-01-01:</label>
+    <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+  
+    <label for="quantity">Quantity (between 1 and 5):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="5">
+  </form>
+  <!-- multiple -->
+  <form>
+    <label for="files">Select files:</label>
+    <input type="file" id="files" name="files" multiple>
+  </form>
+  <!-- pattern -->
+  <!-- Tip: Use the global title attribute to describe the pattern to help the user. -->
+  <form>
+    <label for="country_code">Country code:</label>
+    <input type="text" id="country_code" name="country_code"
+    pattern="[A-Za-z]{3}" title="Three letter country code">
+  </form>
+  <!-- required -->
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  </form>
+  <!-- step -->
+  <!-- Tip: This attribute can be used together with the max and min attributes to create a range of legal values. -->
+  <form>
+    <label for="points">Points:</label>
+    <input type="number" id="points" name="points" step="3">
+  </form>
+  <!-- Note: Input restrictions are not foolproof, and JavaScript provides many ways to add illegal input. To safely restrict input, it must also be checked by the receiver (the server)! -->
+  <!-- height & width -->
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+  </form>
+  <!-- list -->
+  <form>
+    <input list="browsers">
+    <datalist id="browsers">
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+  </form>
+  <!-- autocomplete -->
+  <form action="/action_page.php" autocomplete="on">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" autocomplete="off"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- HTML Input form* Attributes -->
+  <!-- form -->
+  <form action="/action_page.php" id="form1">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" form="form1">
+  <!-- formaction -->
+  <form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+  </form>
+  <!-- formenctype -->
+  <form action="/action_page_binary.asp" method="post">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formenctype="multipart/form-data"
+    value="Submit as Multipart/form-data">
+  </form>
+  <!-- formmethod -->
+  <form action="/action_page.php" method="get">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit using GET">
+    <input type="submit" formmethod="post" value="Submit using POST">
+  </form>
+  <!-- formtarget -->
+  <form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+  </form>
+  <!-- formnovalidate -->
+  <form action="/action_page.php">
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formnovalidate="formnovalidate"
+    value="Submit without validation">
+  </form>
+  <!-- novalidate -->
+  <form action="/action_page.php" novalidate>
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- HTML MEDIA -->
+
+  <!-- HTML Video -->
+  <!-- <video>; autoplay, muted -->
+  <video width="320" height="240" controls autoplay muted>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+  <!-- <track> - Defines text tracks in media players -->
+
+  <!-- HTML Audio -->
+  <!-- <audio>; autoplay, muted -->
+  <audio controls autoplay muted>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+
+  <!-- HTML Plug-ins -->
+  <!-- <object> -->
+  <!-- <embed> -->
+
+  <!-- HTML YouTube Videos -->
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  <!-- autoplay=1, mute=1, playlist=..., loop=1, controls=0 -->
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&playlist=tgbNymZ7vqY&loop=0&controls=1"></iframe>
+
+  <!-- HTML APIS -->
+
+</body>
+</html>
